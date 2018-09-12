@@ -1,0 +1,110 @@
+Do properties which are non-enumerable and shadow enumerable properties get hit?
+
+Chakra / SpiderMonkey: iff object is a proxy
+V8: variable based on extremely specific details
+JSC: always
+XS: never
+
+
+
+"The values of [[Enumerable]] attributes are not considered when determining if a property of a prototype object has already been processed."
+
+Allen: no. https://bugs.chromium.org/p/v8/issues/detail?id=705 / https://mail.mozilla.org/pipermail/es5-discuss/2010-May/003536.html
+
+
+
+
+
+
+
+
+When the prototype changes during evaluation, which properties get hit?
+
+- CH/SM: Original
+- XS: New
+- V8/JSC: Intersection
+
+
+
+Does the list of properties get built ahead of time? IOW, do properties added to the prototype show up?
+
+V8/JSC/SM: build lists ahead of time (SM: without checking deletedness...)
+
+CH/XS: build lists as you go
+
+
+
+If a property is present on an object and its prototype, and is deleted from the object, when is it printed?
+
+CH/XS: during prototype's keys
+V8/JSC/SM: during object's keys
+
+
+
+If a property is rendered nonenumerable before hitting, is it hit?
+
+V8/JSC/SM/CH: yes
+XS: no
+
+
+
+
+
+
+
+
+
+
+Fails to capture actual intersection semantics:
+- all child keys printed before any parent keys
+- follows OrdinaryOwnPropertyKeys order
+- keys added to an object while enumerating it (not to its prototype) are never printed
+
+Per old discussion:
+https://mail.mozilla.org/pipermail/es5-discuss/2010-May/003541.html
+sites break if you violate any of:
+1. Order of enumeration of own properties is the order of addition
+2. You can't enter the loop with a property that has been added since the start of iteration
+3. You can't enter the loop with a property has been removed since that start of iteration
+4. You can't enter the loop with the same value multiple times
+
+
+old constraints:
+https://mail.mozilla.org/pipermail/es-discuss/2010-December/012469.html
+https://mail.mozilla.org/pipermail/es-discuss/2011-March/013066.html
+https://mail.mozilla.org/pipermail/es-discuss/2008-June/006429.html
+"Enumeration order being insertion order for non-arrays at least, if not for all objects (arrays tend to be populated in index order), is old as the hills and web content depends on it, as far as I can tell."
+
+
+previously identified common case:
+https://mail.mozilla.org/pipermail/es-discuss/2010-December/012469.html
+
+The enumeration order of an object's properties will be the order in which the properties were added if all the following conditions hold:
+  The object has no inherited enumerable properties
+  The object has no array indexed properties
+  No properties have been deleted
+  No property has had its attributes modified or been changed from a data property to an accessor property or visa versa
+
+
+
+
+
+
+IE6 was _really_ bad:
+http://wiki.ecmascript.org/doku.php?id=es3.1:es3.x_working_docs&s=jscript+deviations
+https://mail.mozilla.org/pipermail/es-discuss/2009-October/010058.html
+
+
+
+
+kinda-related PR on integer vs array indices:
+https://github.com/tc39/ecma262/pull/1242
+
+
+
+why not already spec'd?
+https://mail.mozilla.org/pipermail/es-discuss/2015-August/043998.html
+
+> Historically, the for-in order was not defined and there has been variation among browser implementations in the order they produce.(and other specifics).   ES5 added Object.keys and the requirement that  it should order the keys identically to for-in. During development of both ES5 and ES6 the possibility of defining a defining a specific for-in order was considered but not adopted because of  web legacy compatibility concerns and uncertainly about the willingness of browsers to make changes in the ordering they currently produce. 
+> If we decided to specify the for-in order it would be the order produced by the informative algorithm provided in 9.1.11.
+
