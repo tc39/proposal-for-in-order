@@ -1,11 +1,11 @@
 if (typeof console === 'undefined') console = { log: print };
 
 
-let derived = { q: 0 };
+let derived = { x: 0 };
 
-let baseOne = { r: 0 };
+let baseOne = { y: 0 };
 
-let baseTwo = { s: 0 };
+let baseTwo = { z: 0 };
 
 
 
