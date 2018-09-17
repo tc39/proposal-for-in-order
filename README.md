@@ -11,8 +11,8 @@ See [spec issue](https://github.com/tc39/ecma262/issues/1281) which inspired thi
 
 ### Some history
 
-This is one of the least-specified parts of ECMAScript, which is closely related to the unfortunately fact that, historically, engines have differed wildly outside of some narrow cases. We've tried to improve things over time, but without much success. Discussions of this go back to the pre-ES3.1 days (most recently, see the unsuccessful [enumeration strawman](https://web.archive.org/web/20160324035200/http://wiki.ecmascript.org/doku.php?id=strawman:enumeration
-) for ES2015), and have re-occurred for every iteration of the spec since.
+This is one of the least-specified parts of ECMAScript, which is closely related to the unfortunate fact that, historically, engines have differed wildly outside of some narrow cases. We've tried to improve things over time, but without much success. Discussions of this go back to the pre-ES3.1 days (most recently, see the unsuccessful [enumeration strawman](https://web.archive.org/web/20160324035200/http://wiki.ecmascript.org/doku.php?id=strawman:enumeration
+) for ES2015), and have re-occurred for every major iteration of the spec since.
 
 But ES2015 did introduce a requirement (in `Reflect.ownKeys`) for engines to preserve information about the insertion order of non-integer (or at least [non-array](https://github.com/tc39/ecma262/pull/1242)) keys, and to be able to list integer keys in ascending order before any other keys. Since then, all the major engines have started using that order in the most common cases.
 
