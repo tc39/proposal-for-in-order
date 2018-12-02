@@ -6,7 +6,7 @@ I suggest running these with [`eshost-cli`](https://github.com/bterlson/eshost-c
 
 The main interesting cases are in the top level directory. Some others I was playing with are under [misc/](misc/).
 
-See [spec issue](https://github.com/tc39/ecma262/issues/1281) which inspired this.
+See [spec issue](https://github.com/tc39/ecma262/issues/1281) which inspired this and [slides](https://docs.google.com/presentation/d/1ppVLFjnd2iGksBXeu97lml2cs9dTRJnJLfufcshvPcs/edit?usp=sharing) / [notes](https://github.com/rwaldron/tc39-notes/blob/master/es9/2018-09/sept-25.md#for-in-mechanics) from my presentation at the September 2018 TC39 meeting.
 
 
 ### Some history
