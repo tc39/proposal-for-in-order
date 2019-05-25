@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "for-in-exploration",
+  "description": "A TC39 proposal to partially specify for-in enumeration order.",
+  "scripts": {
+    "build": "ecmarkup spec.html > index.html"
+  },
+  "homepage": "https://github.com/tc39/for-in-exploration#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tc39/for-in-exploration.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "ecmarkup": "^3.16.0"
+  }
+}
