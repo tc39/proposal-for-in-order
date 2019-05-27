@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="./spec.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
 <script src="./spec.js"></script>
-<title>For-in enumeration order</title><script type="application/json" id="menu-search-biblio">[{"type":"clause","id":"sec-intro","aoid":null,"title":"Introduction","titleHTML":"Introduction","number":"","namespace":"<no location>","location":"","referencingIds":[],"key":"Introduction"},{"type":"op","aoid":"EnumerateObjectProperties","refId":"sec-enumerate-object-properties","location":"","referencingIds":[],"key":"EnumerateObjectProperties"},{"type":"clause","id":"sec-enumerate-object-properties","aoid":"EnumerateObjectProperties","title":"EnumerateObjectProperties ( O )","titleHTML":"EnumerateObjectProperties ( <var>O</var> )","number":"1","namespace":"<no location>","location":"","referencingIds":["_ref_0"],"key":"EnumerateObjectProperties ( O )"},{"type":"clause","id":"sec-copyright-and-software-license","aoid":null,"title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A","namespace":"<no location>","location":"","referencingIds":[],"key":"Copyright & Software License"}]</script><script>"use strict";
+<title>For-in enumeration order</title><script type="application/json" id="menu-search-biblio">[{"type":"clause","id":"sec-intro","aoid":null,"title":"Introduction","titleHTML":"Introduction","number":"","namespace":"<no location>","location":"","referencingIds":[],"key":"Introduction"},{"type":"op","aoid":"EnumerateObjectProperties","refId":"sec-enumerate-object-properties","location":"","referencingIds":[],"key":"EnumerateObjectProperties"},{"type":"clause","id":"sec-enumerate-object-properties","aoid":"EnumerateObjectProperties","title":"EnumerateObjectProperties ( O )","titleHTML":"EnumerateObjectProperties ( <var>O</var> )","number":"1","namespace":"<no location>","location":"","referencingIds":["_ref_3","_ref_6"],"key":"EnumerateObjectProperties ( O )"},{"type":"op","aoid":"CreateForInIterator","refId":"sec-createforiniterator","location":"","referencingIds":[],"key":"CreateForInIterator"},{"type":"clause","id":"sec-createforiniterator","aoid":"CreateForInIterator","title":"CreateForInIterator ( object )","titleHTML":"CreateForInIterator ( <var>object</var> )","number":"2.1","namespace":"<no location>","location":"","referencingIds":["_ref_5"],"key":"CreateForInIterator ( object )"},{"type":"term","term":"%ForInIteratorPrototype%","refId":"sec-%foriniteratorprototype%-object","referencingIds":[],"namespace":"<no location>","location":"","key":"%ForInIteratorPrototype%"},{"type":"clause","id":"sec-%foriniteratorprototype%.next","aoid":null,"title":"%ForInIteratorPrototype%.next ( )","titleHTML":"%ForInIteratorPrototype%.next ( )","number":"2.2.1","namespace":"<no location>","location":"","referencingIds":["_ref_0"],"key":"%ForInIteratorPrototype%.next ( )"},{"type":"clause","id":"sec-%foriniteratorprototype%-object","aoid":null,"title":"The %ForInIteratorPrototype% Object","titleHTML":"The %ForInIteratorPrototype% Object","number":"2.2","namespace":"<no location>","location":"","referencingIds":["_ref_9","_ref_15"],"key":"The %ForInIteratorPrototype% Object"},{"type":"table","id":"table-for-in-iterator-instance-slots","number":1,"caption":"Table 1: Internal Slots of For In Iterator Instances","referencingIds":["_ref_2"],"namespace":"<no location>","location":"","key":"Table 1: Internal Slots of For In Iterator Instances"},{"type":"clause","id":"sec-properties-of-for-in-iterator-instances","aoid":null,"title":"Properties of For In Iterator Instances","titleHTML":"Properties of For In Iterator Instances","number":"2.3","namespace":"<no location>","location":"","referencingIds":["_ref_1"],"key":"Properties of For In Iterator Instances"},{"type":"clause","id":"sec-for-in-iterator-objects","aoid":null,"title":"For In Iterator Objects","titleHTML":"For In Iterator Objects","number":"2","namespace":"<no location>","location":"","referencingIds":[],"key":"For In Iterator Objects"},{"type":"clause","id":"sec-copyright-and-software-license","aoid":null,"title":"Copyright & Software License","titleHTML":"Copyright &amp; Software License","number":"A","namespace":"<no location>","location":"","referencingIds":[],"key":"Copyright & Software License"}]</script><script>"use strict";
 
 function Search(menu) {
   this.menu = menu;
@@ -1805,28 +1805,27 @@ li.menu-search-result-term:before {
     display: none; 
   }
 }
-</style></head><body><div id="menu-toggle">☰</div><div id="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins</div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-intro" title="Introduction">Introduction</a></li><li><span class="item-toggle-none"></span><a href="#sec-enumerate-object-properties" title="EnumerateObjectProperties ( O )"><span class="secnum">1</span> EnumerateObjectProperties ( <var>O</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version first">Stage 1 Draft / May 25, 2019</h1><h1 class="title">For-in enumeration order</h1>
+</style></head><body><div id="menu-toggle">☰</div><div id="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins</div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-intro" title="Introduction">Introduction</a></li><li><span class="item-toggle-none"></span><a href="#sec-enumerate-object-properties" title="EnumerateObjectProperties ( O )"><span class="secnum">1</span> EnumerateObjectProperties ( <var>O</var> )</a></li><li><span class="item-toggle">◢</span><a href="#sec-for-in-iterator-objects" title="For In Iterator Objects"><span class="secnum">2</span> For In Iterator Objects</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-createforiniterator" title="CreateForInIterator ( object )"><span class="secnum">2.1</span> CreateForInIterator ( <var>object</var> )</a></li><li><span class="item-toggle">◢</span><a href="#sec-%foriniteratorprototype%-object" title="The %ForInIteratorPrototype% Object"><span class="secnum">2.2</span> The %ForInIteratorPrototype% Object</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-%foriniteratorprototype%.next" title="%ForInIteratorPrototype%.next ( )"><span class="secnum">2.2.1</span> %ForInIteratorPrototype%.next ( )</a></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-properties-of-for-in-iterator-instances" title="Properties of For In Iterator Instances"><span class="secnum">2.3</span> Properties of For In Iterator Instances</a></li></ol></li><li><span class="item-toggle-none"></span><a href="#sec-copyright-and-software-license" title="Copyright &amp; Software License"><span class="secnum">A</span> Copyright &amp; Software License</a></li></ol></div></div><div id="spec-container"><h1 class="version first">Stage 1 Draft / May 27, 2019</h1><h1 class="title">For-in enumeration order</h1>
 
 <emu-intro id="sec-intro">
   <h1>Introduction</h1>
-  <p>The order of <code>for (a in b) ...</code> is specified in <emu-xref aoid="EnumerateObjectProperties" id="_ref_0"><a href="#sec-enumerate-object-properties">EnumerateObjectProperties</a></emu-xref>, but only loosely. This proposal aims to begin fixing that.</p>
+  <p>The order of <code>for (a in b) ...</code> is specified in <emu-xref aoid="EnumerateObjectProperties" id="_ref_3"><a href="#sec-enumerate-object-properties">EnumerateObjectProperties</a></emu-xref>, but only loosely. This proposal aims to begin fixing that.</p>
 </emu-intro>
 
 <emu-clause id="sec-enumerate-object-properties" aoid="EnumerateObjectProperties">
   <h1><span class="secnum">1</span>EnumerateObjectProperties ( <var>O</var> )</h1>
   <p>When the abstract operation EnumerateObjectProperties is called with argument <var>O</var>, the following steps are taken:</p>
-  <emu-alg><ol><li>Assert: <emu-xref aoid="Type" id="_ref_1"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a></emu-xref>(<var>O</var>) is Object.</li><li>Return an Iterator object (<emu-xref href="#sec-iterator-interface"><a href="https://tc39.github.io/ecma262/#sec-iterator-interface">25.1.1.2</a></emu-xref>) whose <code>next</code> method iterates over all the String-valued keys of enumerable properties of <var>O</var>. The iterator object is never directly accessible to ECMAScript code. The mechanics and order of enumerating the properties is not specified but must conform to the rules specified below.
+  <emu-alg><ol><li>Assert: <emu-xref aoid="Type" id="_ref_4"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a></emu-xref>(<var>O</var>) is Object.</li><li>Return an Iterator object (<emu-xref href="#sec-iterator-interface"><a href="https://tc39.github.io/ecma262/#sec-iterator-interface">25.1.1.2</a></emu-xref>) whose <code>next</code> method iterates over all the String-valued keys of enumerable properties of <var>O</var>. The iterator object is never directly accessible to ECMAScript code. The mechanics and order of enumerating the properties is not specified but must conform to the rules specified below.
   </li></ol></emu-alg>
   <p>The iterator's <code>throw</code> and <code>return</code> methods are <emu-val>null</emu-val> and are never invoked. The iterator's <code>next</code> method processes object properties to determine whether the property key should be returned as an iterator value. Returned property keys do not include keys that are Symbols. Properties of the target object may be deleted during enumeration. A property that is deleted before it is processed by the iterator's <code>next</code> method is ignored. If new properties are added to the target object during enumeration, the newly added properties are not guaranteed to be processed in the active enumeration. A property name will be returned by the iterator's <code>next</code> method at most once in any enumeration.</p>
   <p>Enumerating the properties of the target object includes enumerating properties of its prototype, and the prototype of the prototype, and so on, recursively; but a property of a prototype is not processed if it has the same name as a property that has already been processed by the iterator's <code>next</code> method. The values of [[Enumerable]] attributes are not considered when determining if a property of a prototype object has already been processed. The enumerable property names of prototype objects must be obtained by invoking EnumerateObjectProperties passing the prototype object as the argument. EnumerateObjectProperties must obtain the own property keys of the target object by calling its [[OwnPropertyKeys]] internal method. Property attributes of the target object must be obtained by calling its [[GetOwnProperty]] internal method.</p>
-  <p><ins>In addition, if neither <var>O</var> nor any object in its prototype chain is an exotic object, then the iterator must behave identically to that in the NOTE below until either <var>O</var> or an object in its prototype chain has its <code>[[SetPrototypeOf]]</code>, <code>[[DefineOwnProperty]]</code>, or <code>[[Delete]]</code> internal method invoked.</ins></p>
+  <p><ins>In addition, if neither <var>O</var> nor any object in its prototype chain is an exotic object, then the iterator must behave as if it were the iterator given by <emu-xref aoid="CreateForInIterator" id="_ref_5"><a href="#sec-createforiniterator">CreateForInIterator</a></emu-xref> ( <var>O</var> ) until either <var>O</var> or an object in its prototype chain has its <code>[[SetPrototypeOf]]</code>, <code>[[DefineOwnProperty]]</code>, or <code>[[Delete]]</code> internal method invoked.</ins></p>
 
   <emu-note><span class="note">Note 1</span><div class="note-contents"><ins>
-    Engines are not expected to check the cosntrainst in the previous paragraph. Instead, they can choose an implementation which will behave identically to the algorithm below as long as the above constraints are met.
+    Rather than implementing the algorithm in  <emu-xref href="#sec-%foriniteratorprototype%.next" id="_ref_0"><a href="#sec-%foriniteratorprototype%.next">2.2.1</a></emu-xref> directly, engines are expected choose an implementation whose behavior will not deviate from that algorithm unless one of the constraints in the previous paragraph is violated.
   
   </ins></div></emu-note>
 
-  <emu-note type="editor"><span class="note">Editor's Note</span><div class="note-contents">TODO write the implementation below in spec text.</div></emu-note>
   
   <emu-note><span class="note">Note 2</span><div class="note-contents">
     <p>The following is an informative definition of an ECMAScript generator function that conforms to these rules:</p>
@@ -1847,6 +1846,97 @@ li.menu-search-result-term:before {
   }
 }</code></pre>
   </div></emu-note>
+</emu-clause>
+
+<emu-clause id="sec-for-in-iterator-objects">
+  <h1><span class="secnum">2</span>For In Iterator Objects</h1>
+  <p>A For In Iterator is an object that represents a specific iteration over some specific object. For In Iterator objects are never directly accessible to ECMAScript code; they exist soley to illustrate the behavior of <emu-xref aoid="EnumerateObjectProperties" id="_ref_6"><a href="#sec-enumerate-object-properties">EnumerateObjectProperties</a></emu-xref>.</p>
+
+  <emu-clause id="sec-createforiniterator" aoid="CreateForInIterator">
+    <h1><span class="secnum">2.1</span>CreateForInIterator ( <var>object</var> )</h1>
+    <p>The abstract operation CreateForInIterator with argument <var>object</var> is used to create a For In Iterator object which iterates over the own and inherited enumerable string properties of <var>object</var> in a specific order. It performs the following steps:</p>
+    <emu-alg><ol><li>Assert: <emu-xref aoid="Type" id="_ref_7"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a></emu-xref>(<var>object</var>) is Object.</li><li>Let <var>iterator</var> be <emu-xref aoid="ObjectCreate" id="_ref_8"><a href="https://tc39.github.io/ecma262/#sec-objectcreate">ObjectCreate</a></emu-xref>(<emu-xref href="#sec-%foriniteratorprototype%-object" id="_ref_9"><a href="#sec-%foriniteratorprototype%-object">%ForInIteratorPrototype%</a></emu-xref>, « [[Object]], [[ObjectWasVisited]], [[VisitedKeys]], [[RemainingKeys]] »).</li><li>Set <var>iterator</var>.[[Object]] to <var>object</var>.</li><li>Set <var>iterator</var>.[[ObjectWasVisited]] to <emu-val>false</emu-val>.</li><li>Set <var>iterator</var>.[[VisitedKeys]] to a new empty <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.github.io/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref>.</li><li>Set <var>iterator</var>.[[RemainingKeys]] to a new empty <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.github.io/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref>.</li><li>Return <var>iterator</var>.
+    </li></ol></emu-alg>
+  </emu-clause>
+
+  <emu-clause id="sec-%foriniteratorprototype%-object">
+    <h1><span class="secnum">2.2</span>The %ForInIteratorPrototype% Object</h1>
+    <p>The  <dfn>%ForInIteratorPrototype%</dfn> object:</p>
+    <ul>
+      <li>has properties that are inherited by all For In Iterator Objects.</li>
+      <li>is an ordinary object.</li>
+      <li>has a [[Prototype]] internal slot whose value is the intrinsic object <emu-xref href="#sec-%iteratorprototype%-object"><a href="https://tc39.github.io/ecma262/#sec-%iteratorprototype%-object">%IteratorPrototype%</a></emu-xref>.</li>
+      <li>is never directly accessible to ECMAScript code.</li>
+      <li>has the following properties:</li>
+    </ul>
+
+    <emu-clause id="sec-%foriniteratorprototype%.next">
+      <h1><span class="secnum">2.2.1</span>%ForInIteratorPrototype%.next ( )</h1>
+      <emu-alg><ol><li>Let <var>O</var> be the <emu-val>this</emu-val> value.</li><li>Assert: <emu-xref aoid="Type" id="_ref_10"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a></emu-xref>(<var>O</var>) is Object.</li><li>Assert: <var>O</var> has all of the internal slots of a For In Iterator Instance (<emu-xref href="#sec-properties-of-for-in-iterator-instances" id="_ref_1"><a href="#sec-properties-of-for-in-iterator-instances">2.3</a></emu-xref>).</li><li>Let <var>object</var> be <var>O</var>.[[Object]].</li><li>Let <var>visited</var> be <var>O</var>.[[VisitedKeys]].</li><li>Let <var>remaining</var> be <var>O</var>.[[RemainingKeys]].</li><li>Repeat,<ol><li>If <var>O</var>.[[ObjectWasVisited]] is <emu-val>false</emu-val>, then<ol><li>Let <var>keys</var> be ? <var>object</var>.[[OwnPropertyKeys]]().</li><li>For each <var>key</var> of <var>keys</var> in <emu-xref href="#sec-list-and-record-specification-type"><a href="https://tc39.github.io/ecma262/#sec-list-and-record-specification-type">List</a></emu-xref> order, do<ol><li>If <emu-xref aoid="Type" id="_ref_11"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a></emu-xref>(<var>key</var>) is String, then<ol><li>Append <var>key</var> to <var>remaining</var>.</li></ol></li></ol></li><li>Set <var>O</var>.[[ObjectWasVisited]] to <emu-val>true</emu-val>.</li></ol></li><li>Repeat, while <var>remaining</var> is not empty,<ol><li>Remove the first element from <var>remaining</var> and let <var>r</var> be the value of the element.</li><li>If there does not exist an element <var>v</var> of <var>visited</var> such that <emu-xref aoid="SameValue" id="_ref_12"><a href="https://tc39.github.io/ecma262/#sec-samevalue">SameValue</a></emu-xref>(<var>r</var>, <var>v</var>) is <emu-val>true</emu-val>, then<ol><li>Let <var>desc</var> be ? <var>object</var>.[[GetOwnProperty]](<var>r</var>).</li><li>If <var>desc</var> is not <emu-val>undefined</emu-val>, then<ol><li>Append <var>r</var> to <var>visited</var>.</li><li>If <var>desc</var>.[[Enumerable]] is <emu-val>true</emu-val>, return <emu-xref aoid="CreateIterResultObject" id="_ref_13"><a href="https://tc39.github.io/ecma262/#sec-createiterresultobject">CreateIterResultObject</a></emu-xref>(<var>r</var>, <emu-val>false</emu-val>).</li></ol></li></ol></li></ol></li><li>Set <var>object</var> to ? <var>object</var>.[[GetPrototypeOf]]().</li><li>Set <var>O</var>.[[Object]] to <var>object</var>.</li><li>Set <var>O</var>.[[ObjectWasVisited]] to <emu-val>false</emu-val>.</li><li>If <var>object</var> is <emu-val>null</emu-val>, return <emu-xref aoid="CreateIterResultObject" id="_ref_14"><a href="https://tc39.github.io/ecma262/#sec-createiterresultobject">CreateIterResultObject</a></emu-xref>(<emu-val>undefined</emu-val>, <emu-val>true</emu-val>).
+      </li></ol></li></ol></emu-alg>
+    </emu-clause>
+  </emu-clause>
+
+  <emu-clause id="sec-properties-of-for-in-iterator-instances">
+    <h1><span class="secnum">2.3</span>Properties of For In Iterator Instances</h1>
+    <p>For In Iterator instances are ordinary objects that inherit properties from the <emu-xref href="#sec-%foriniteratorprototype%-object" id="_ref_15"><a href="#sec-%foriniteratorprototype%-object">%ForInIteratorPrototype%</a></emu-xref> intrinsic object. For In Iterator instances are initially created with the internal slots listed in  <emu-xref href="#table-for-in-iterator-instance-slots" id="_ref_2"><a href="#table-for-in-iterator-instance-slots">Table 1</a></emu-xref>.</p>
+        <emu-table id="table-for-in-iterator-instance-slots" caption="Internal Slots of For In Iterator Instances"><figure><figcaption>Table 1: Internal Slots of For In Iterator Instances</figcaption>
+      <table>
+        <tbody>
+        <tr>
+          <th>
+            Internal Slot
+          
+          </th>
+          <th>
+            Description
+          
+          </th>
+        </tr>
+        <tr>
+          <td>
+            [[Object]]
+          
+          </td>
+          <td>
+            The Object value whose properties are being iterated.
+          
+          </td>
+        </tr>
+        <tr>
+          <td>
+            [[ObjectWasVisited]]
+          
+          </td>
+          <td>
+            <emu-val>true</emu-val> if the iterator has invoked [[OwnPropertyKeys]] on [[Object]], <emu-val>false</emu-val> otherwise.
+          
+          </td>
+        </tr>
+        <tr>
+          <td>
+            [[VisitedKeys]]
+          
+          </td>
+          <td>
+            A list of String values which have been emitted by this iterator thus far.
+          
+          </td>
+        </tr>
+        <tr>
+          <td>
+            [[RemainingKeys]]
+          
+          </td>
+          <td>
+            A list of String values remaining to be emitted for the current object, before iterating those on its prototype (if its prototype is not <emu-val>null</emu-val>).
+          
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </figure></emu-table>
+  </emu-clause>
 </emu-clause><emu-annex id="sec-copyright-and-software-license">
       <h1><span class="secnum">A</span>Copyright &amp; Software License</h1>
       
@@ -1867,6 +1957,5 @@ li.menu-search-result-term:before {
 <p>THIS SOFTWARE IS PROVIDED BY THE ECMA INTERNATIONAL "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL ECMA INTERNATIONAL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 
     </emu-annex>
-
 
 </div></body>
