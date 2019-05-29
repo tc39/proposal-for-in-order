@@ -27,4 +27,4 @@ In addition, since [the only case where calling `[[Delete]]` but not `[[DefineOw
 
 ## Spec text
 
-See [candidate spec text](http://tc39.github.io/for-in-exploration). This does not yet capture the "no non-enumerable property shadows an enumerable one" constraint above, because I am having trouble figuring out how to say that.
+See [candidate spec text](https://tc39.github.io/proposal-for-in-exploration/). This does not yet capture the "no non-enumerable property shadows an enumerable one" constraint above, because I am having trouble figuring out how to say that.
