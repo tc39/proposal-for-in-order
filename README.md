@@ -17,7 +17,7 @@ See the [exploration](exploration/) directory for background and test cases from
 
 From [this list of interop semantics](exploration#interop-semantics) we can derive a conservative underapproximation of cases where engines already agree, which I believe covers the most common common cases. Specifically:
 
-- Neither the object being iterated nor anything in its prototype chain is exotic, except for Array exotic objects.
+- Neither the object being iterated nor anything in its prototype chain is a proxy, typed array, module namespace object, or host exotic object.
 - Neither the object nor anything in its prototype chain has its prototype change during iteration.
 - Neither the object nor anything in its prototype chain has a property deleted during iteration.
 - Nothing in the object's prototype chain has a property added during iteration.
