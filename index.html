@@ -1821,10 +1821,10 @@ li.menu-search-result-term:before {
   <p>Enumerating the properties of the target object includes enumerating properties of its prototype, and the prototype of the prototype, and so on, recursively; but a property of a prototype is not processed if it has the same name as a property that has already been processed by the iterator's <code>next</code> method. The values of [[Enumerable]] attributes are not considered when determining if a property of a prototype object has already been processed. The enumerable property names of prototype objects must be obtained by invoking EnumerateObjectProperties passing the prototype object as the argument. EnumerateObjectProperties must obtain the own property keys of the target object by calling its [[OwnPropertyKeys]] internal method. Property attributes of the target object must be obtained by calling its [[GetOwnProperty]] internal method.</p>
   <p><ins>In addition, if neither <var>O</var> nor any object in its prototype chain is an exotic object other than an Array exotic object, then the iterator must behave as if it were the iterator given by <emu-xref aoid="CreateForInIterator" id="_ref_5"><a href="#sec-createforiniterator">CreateForInIterator</a></emu-xref> ( <var>O</var> ) until one of the following occurs:</ins></p>
   <ul>
-    <li><ins><var>O</var> or an object in its prototype chain has its [[SetPrototypeOf]] internal method invoked,</ins></li>
-    <li><ins><var>O</var> or an object in its prototype chain has its [[Delete]] internal method invoked,</ins></li>
-    <li><ins>an object in <var>O</var>'s prototype chain has its [[DefineOwnProperty]] internal method invoked, or</ins></li>
-    <li><ins><var>O</var> has its [[DefineOwnProperty]] internal method invoked with arguments <var>P</var> and <var>Desc</var> such that, at the point of invocation, <var>O</var> has an own property with key <var>P</var> and the value of the [[Enumerable]] attribute of that property is not the same as the value of <var>Desc</var>.[[Enumerable]].</ins></li>
+    <li><ins>the value of the [[Prototype]] internal slot of <var>O</var> or an object in its prototype chain changes,</ins></li>
+    <li><ins>a property is removed from <var>O</var> or an object in its prototype chain,</ins></li>
+    <li><ins>a property is added to an object in <var>O</var>'s prototype chain, or</ins></li>
+    <li><ins>the value of the [[Enumerable]] attribute of a property of <var>O</var> or an object in its prototype chain changes.</ins></li>
   </ul>
 
   <emu-note><span class="note">Note 1</span><div class="note-contents"><ins>
