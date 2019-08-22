@@ -44,7 +44,7 @@ While implementations all differ (see [this comment](https://github.com/tc39/ecm
 
 Engines differ in an exciting variety of ways, but only in unusual cases. In particular, as long as the following hold for the duration of iteration
 
-- No proxies or host objects, including in the prototype chain ([test](proxy-trapped.js))
+- No proxies, typed arrays, module namespace objects, or host objects, including in the prototype chain ([proxy test](proxy-trapped.js), [typed array test](array-buffer-detached.js), [module namespace test](module-namespace.js))
 - Prototype chain does not change ([test](prototype-changes-during.js))
 - No property is added to something up the prototype chain (but may be added to the object itself) ([test](list-build-order.js))
 - No property's enumerability changes ([test](made-nonenum.js), [test](made-enum.js))
