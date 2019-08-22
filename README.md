@@ -23,9 +23,7 @@ From [this list of interop semantics](exploration#interop-semantics) we can deri
 - No property of the object itself has its enumerability change during iteration.
 - No non-enumerable property shadows an enumerable one.
 
-The first four are fairly easy to specify in prose; the third is somewhat harder. As far as I know JavaScriptCore is the only engine which will output anything in [this case](exploration/enumerable-shadowed.js), because of [this longstanding bug](https://bugs.webkit.org/show_bug.cgi?id=38970).
-
-In addition, since [the only case where calling `[[Delete]]` but not `[[DefineOwnProperty]]` leads to divergence in engine behavior](exploration/delete-shadowed.js) is only divergent in ChakraCore and XS, I'm hoping it can be removed from the list in the second bullet point above.
+All but the last are fairly easy to specify in prose; the last is somewhat harder. As far as I know JavaScriptCore is the only engine which will output anything in [this case](exploration/enumerable-shadowed.js), because of [this longstanding bug](https://bugs.webkit.org/show_bug.cgi?id=38970), so I am hopeful that point can be discarded.
 
 ## Spec text
 
