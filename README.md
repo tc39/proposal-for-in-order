@@ -4,7 +4,7 @@
 
 ECMA-262 leaves the order of `for (a in b) ...` [almost totally unspecified](https://tc39.github.io/ecma262/#sec-enumerate-object-properties), but real engines tend to be consistent in at least some cases. Furthermore, over the years implementations have observed that anyone who wants to run code on the web needs to follow some constraints not captured by the spec.
 
-This is a [stage 1 proposal](https://tc39.github.io/process-document/) to begin fixing that.
+This is a [stage 2 proposal](https://tc39.github.io/process-document/) to begin fixing that.
 
 ## Background
 
