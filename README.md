@@ -18,8 +18,8 @@ See the [exploration](exploration/) directory for background and test cases from
 From [this list of interop semantics](exploration#interop-semantics) we can derive a conservative underapproximation of cases where engines already agree, which I believe covers the most common common cases. Specifically:
 
 - Neither the object being iterated nor anything in its prototype chain is exotic, except for Array exotic objects.
-- Neither the object nor anything in its prototype has its prototype change during iteration.
-- Neither the object nor anything in its prototype has a property deleted during iteration.
+- Neither the object nor anything in its prototype chain has its prototype change during iteration.
+- Neither the object nor anything in its prototype chain has a property deleted during iteration.
 - Nothing in the object's prototype chain has a property added during iteration.
 - No property of the object or anything in its prototype chain has its enumerability change during iteration.
 - No non-enumerable property shadows an enumerable one.
