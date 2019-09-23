@@ -31,16 +31,9 @@ contributors: Kevin Gibbons
     <li><ins>the value of the [[Enumerable]] attribute of a property of _O_ or an object in its prototype chain changes.</ins></li>
   </ul>
 
-  <emu-note><ins>
-    Rather than implementing the algorithm in <emu-xref href="#sec-%foriniteratorprototype%.next"></emu-xref> directly, engines are expected choose an implementation whose behavior will not deviate from that algorithm unless one of the constraints in the previous paragraph is violated.
-  </ins></emu-note>
-
-  <emu-note><ins>
-    The list of exotic objects for which implementations are not required to match CreateForInIterator was chosen because implementations historically differed in behavior for those cases, and agreed in all others.
-  </ins></emu-note>
-
   <emu-note>
-    <p>The following is an informative definition of an ECMAScript generator function that conforms to these rules:</p>
+    <p><ins>Rather than implementing the algorithm in <emu-xref href="#sec-%foriniteratorprototype%.next"></emu-xref> directly, engines are expected choose an implementation whose behavior will not deviate from that algorithm unless one of the constraints in the previous paragraph is violated.</ins></p>
+    <p><ins>For example, the following is an informative definition of an ECMAScript generator function that conforms to these rules:</ins></p>
     <pre><code class="javascript">
       function* EnumerateObjectProperties(obj) {
         const visited = new Set();
@@ -59,7 +52,12 @@ contributors: Kevin Gibbons
         }
       }
     </code></pre>
-  </emu-note>
+  </ins></emu-note>
+
+  <emu-note><ins>
+    The list of exotic objects for which implementations are not required to match CreateForInIterator was chosen because implementations historically differed in behavior for those cases, and agreed in all others.
+  </ins></emu-note>
+
 </emu-clause>
 
 <emu-clause id="sec-for-in-iterator-objects">
