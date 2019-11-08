@@ -40,6 +40,10 @@ The following APIs use [`EnumerableOwnPropertyNames`](https://tc39.es/ecma262/#s
 - [`JSON.parse`](https://tc39.es/ecma262/#sec-json.parse) via [`InternalizeJSONProperty`](https://tc39.es/ecma262/#sec-internalizejsonproperty)
 - [`JSON.stringify`](https://tc39.es/ecma262/#sec-json.stringify) via [`SerializeJSONObject`](https://tc39.es/ecma262/#sec-serializejsonobject)
 
+The [other-effects](other-effects/) directory contains tests demonstrating simple examples of how each of these are observable. All major engines already agree in all of these cases.
+
+Because all of the objects produced by `JSON.parse` are within the interop semantics, it will be fully specified after this proposal. The others can all be passed exotic arguments and so will not.
+
 ### `Reflect.ownKeys`-ordered APIs
 
 The following APIs invoke the `[[OwnPropertyKeys]]` internal method directly, whose behavior is fully specified. They are therefore not affected by this proposal.
