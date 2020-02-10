@@ -1,10 +1,12 @@
+**This proposal has been accepted and [merged into the main specification](https://github.com/tc39/ecma262/pull/1791). This repository exists only for historical interest.**
+
 # Specifying for-in enumeration order
 
 (Partially.)
 
 ECMA-262 leaves the order of `for (a in b) ...` [almost totally unspecified](https://tc39.github.io/ecma262/#sec-enumerate-object-properties), but real engines tend to be consistent in at least some cases. Furthermore, over the years implementations have observed that anyone who wants to run code on the web needs to follow some constraints not captured by the spec.
 
-This is a [stage 3 proposal](https://tc39.github.io/process-document/) to begin fixing that.
+This is a [stage 4 (finished) proposal](https://tc39.github.io/process-document/) to begin fixing that.
 
 ## Background
 
